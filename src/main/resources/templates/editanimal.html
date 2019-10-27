@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Muokkaa eläimen tietoja</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{css/forms.css}" />
+</head>
+<body>
+	<h1>Muokkaa valitun eläimen tietoja</h1>
+	<div>
+		<form class="form" th:object="${animal}" th:action="@{/save}" action="#" method="post">
+			<input type="hidden" id="id" th:field="*{id}"/>
+			<label for="name">Nimi </label> 
+				<input type="text" id="name" th:field="${animal.name}" />
+			<br>
+			<label for="species">Laji </label> 
+				<input type="text" id="species" th:field="${animal.species}" />
+			<br>
+			<label for="genders">Sukupuoli</label>
+			  <select id="genders" th:field="*{sex}">
+       			<option th:each="sex: ${genders}" th:value="${sex.sexid}" th:text="${sex.gender}"></option>
+    		  </select>
+    		<br>
+    		<label for="weight">Paino </label> 
+				<input type="text" id="weight" th:field="${animal.weight}" />
+			<br>
+			<input type="submit" value="Päivitä"></input>
+		</form>
+			<a href="/zoolist" class="button">Palaa takaisin</a>
+
+	</div>
+</body>
+</html>

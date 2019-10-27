@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Piippolan eläintarha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/forms.css}" />
+</head>
+<body>
+	<h1>Lisää uusi eläin</h1>
+	<!-- alhaalta kun painaa "submit", se ohjaa th:action @{save}, mikä ohjaa AnimalControlleriin /save endpointiin -->
+	<form  class="form" th:object="${animal}" th:action="@{save}" action="#" method="post">
+			<label for="name">Nimi</label>
+		<!-- *{name} jne. kertovat että nämä ovat ylhäällä nimettyyn objektiin liittyviä attribuutteja-->
+		<input type="text" id="name" th:field="*{name}" />
+		<br>
+			<label for="sex">Laji</label>
+		<input type="text" id="species" th:field="*{species}"/>
+		<br>
+			<label for="weight">Paino</label>
+		<input type="text" th:field="*{weight}" />
+		<br>
+			<label for="sexlist">Sukupuoli</label>
+		<select id="sexlist" th:field="*{sex}" >
+			<option th:each="sex: ${genders}" th:value="${sex.sexid}" th:text="${sex.gender}"></option>
+		</select>
+		<br>
+		<input type="submit"  value="Tallenna"></input>
+		<br>
+	</form>
+		<br>
+		<a href="/zoolist" class="button" >Palaa takaisin</a></input>
+</body>
+</html>

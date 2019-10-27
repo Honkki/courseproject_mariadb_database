@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Piippolan eläintarha</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/forms.css}" />
+</head>
+	<body>
+		<h1>Valitse poistettava eläin</h1>
+		<table class="form">
+		<tr>
+				<th>Nimi</th>
+				<th>Laji</th>
+				<th></th>
+		</tr>
+			<tbody>
+				<tr th:each= "animal: ${animals}">
+					<td th:text="${animal.name}"></td>
+					<td th:text="${animal.species}"></td>
+					<td><a th:href="@{/delete/{id}(id=${animal.id})}" class="button">Poista</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="/zoolist" class="button">Palaa takaisin</a>
+	</body>
+
+
+
+
+</html>

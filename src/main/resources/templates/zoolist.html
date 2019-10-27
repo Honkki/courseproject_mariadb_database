@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Piippolan eläintarha</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/forms.css}" />
+</head>
+	<body>
+		<h1>Piippolan eläintarhan eläimet</h1>
+		
+		<!-- tervehditään käyttäjää -->
+		<div class="col-md-4">
+		<h3 th:inline="text">Tervetuloa, [[${#httpServletRequest.remoteUser}]] !</h3>
+		</div>
+		
+		<table>
+		<tr>
+				<th>Nimi</th>
+				<th>Laji</th>
+				<th>Sukupuoli</th>
+				<th>Paino</th>
+				<th></th>
+		</tr>
+			<tbody>
+				<tr th:each= "animal: ${animals}">
+					<td th:text="${animal.name}"></td>
+					<td th:text="${animal.species}"></td>
+					<td th:text="${animal.sex.gender}"></td>
+					<td th:text="${animal.weight}"></td>
+					<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${animal.id})}" class="muokkaa">Muokkaa</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<div sec:authorize="hasAuthority('ADMIN')">
+		<a href="/add" class="button" >Lisää eläin</a>
+		<a href="/deletepage" class="button">Poista eläin</a>
+		</div>
+		
+		<!-- spring-boot hoitaa logoutin tällä -->
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Kirjaudu ulos" class="btn btn-sm btn-danger"/>
+		</form>
+	</body>
+
+
+
+
+</html>

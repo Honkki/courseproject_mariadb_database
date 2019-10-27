@@ -1,0 +1,104 @@
+<style type="text/css">
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+}
+
+th {
+  height: 30px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+td
+{
+  height: 30px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+.form{
+ 	font-family: Helvetica;
+	max-width: 400px;
+	padding: 16px;
+	background: #F7F7F7;
+}
+
+.muokkaa{
+	 font: 95% Arial, Helvetica, sans-serif;
+	 text-decoration: none;
+	 font-size: 14px;
+	 padding: 2px;
+	 background-color: #a3fedc;
+	 color: #333333;
+	 border-top: 1px solid #CCCCCC;
+	 border-right: 1px solid #333333;
+	 border-bottom: 1px solid #333333;
+	 border-left: 1px solid #CCCCCC;
+	
+}
+
+h1{
+	font-family: Helvetica;
+	font-size: 140%;
+	font-weight: 300;
+}
+
+h3{
+	font-family: Helvetica;
+	font-size: 100%;
+	font-weight: 300;
+}
+
+input[type="text"]
+{	width: 40%;
+	background: #fff;
+	margin-bottom: 5px;
+	border: 1px solid #ccc;
+	padding: 2px;
+	color: #555;
+	font-family: Helvetica;
+}
+
+input[type="submit"]{
+	width: 40%;
+	padding: 5px;
+	margin-top: 15px;
+	background: #008080;	
+	color: #fff;
+	border-color: #008080;
+}
+
+input[type="submit"]:hover{
+	background: #2EBC99;
+}
+
+.button {
+ 	font-family: Helvetica;
+ 	text-decoration: none;
+ 	background-color: #EEEEEE;
+ 	color: #333333;
+ 	padding: 2px;
+ 	margin: 5px;
+ 	border-top: 1px solid #CCCCCC;
+ 	border-right: 1px solid #333333;
+ 	border-bottom: 1px solid #333333;
+ 	border-left: 1px solid #CCCCCC;
+}
+
+.error {
+	color: #d50000;
+	font-family: Helvetica;
+}
+
+.logout {
+	color: #2cd359;
+	font-family: Helvetica;
+}
+</style>
